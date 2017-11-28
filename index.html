@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Remotely Operated Underwater Vehicle</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles -->
+  <link href="css/grayscale.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <img src="img/ROV_logo.png" width="50" height="50" class="d-inline-block align-middle" alt=""> </a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#TheROV">The ROV</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#result">Result</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#documentation">Documentation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Intro Header -->
+  <header class="masthead">
+    <div class="intro-body">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h1 class="brand-heading">ROV</h1>
+            <p class="intro-text"> Remotely Operated Underwater Vehicle
+            </p>
+            <a href="#TheROV" class="btn btn-circle js-scroll-trigger">
+              <i class="fa fa-angle-double-down animated"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- THE ROV Section -->
+  <section id="TheROV" class="content-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>The ROV</h2>
+          <p>The ROV is a small underwater system that is equipped with 6 thrusters that enable it to control all 6 degrees
+            of freedom under water. It uses an inertial measuerement unit (IMU), a camera and a pressure sensor to estimate
+            it's position, velocity, orientation and angular velocities about all three body-fix axes. The ROV is remotely
+            operated via a PC using a Xbox controller or by setting references in specific states through the GUI. The PC
+            communicates with the ROV's internal computer through a cable.
+            <br> One of the main purposes of this project has been to introduce a positioning system in order to be able to fulfill
+            the ultimate goal of a fully autonomous system in the future. This goal has been achieved with the position control,
+            which enables the operator to specify a position to which the ROV then navigates.
+          </p>
+          <h3>Sensors</h3>
+          <p>The ROV uses multiple sensors to become aware of its position and orientation. The sensors used are an IMU, a camera
+            and two pressure sensors. The video feed from the camera is used for detection of QR-like codes in the vicinity
+            and uses these as measurements of the position and attitude of the ROV. All sensor data is processed by the sensor
+            fusion module to reduce noise and improve the system state estimates for the controller.
+          </p>
+
+          <h3>Controllers</h3>
+          <p>There are two controllers implemented in this project, one which controls the angular and linear velocities and
+            one which controls the attitude and the position of the ROV. The velocity controller is the inner loop of a cascade
+            structure where the position and attitude controller is the outer loop. This means that the outer loop takes
+            a position and Euler angle reference as input, and would produce a reference signal for the inner velocity controller
+            as output. Furthermore, a decentralized structure with PI-controllers is used in order to control the various
+            inputs independently.</p>
+          <h3>Modelling and Simulation</h3>
+          <p>A model describing the system dynamics has been implemented in the sensor fusion model to increase the performance
+            of the state estimates in all six degrees of freedom: 3D position (x, y, z), roll angle, roll angle and yaw angle.
+            The model also includes the derivatives of these states. However, underwater dynamics are very non-linear since
+            the water dampens movement and the water flux around the vessel disturbs the system. These effects are modelled
+            in a non-linear grey box model which after reduction and adaption to our system contains 20 unknown parameters
+            to be estimated. Several system identification tests were performed and the data shall be used to estimate these
+            parameters.</p>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result Section -->
+  <section id="result" class="result-section content-section text-center">
+    <div class="container">
+      <div class="col-lg-8 mx-auto">
+        <h2>Result</h2>
+        <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+        <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Section -->
+  <section id="documentation" class="documentation-section content-section text-center">
+    <div class="container">
+      <div class="col-lg-8 mx-auto">
+        <h2>Documentaation</h2>
+        <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
+        <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="content-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2>Contact</h2>
+          <p>Feel free to leave us a comment on the
+            <a href="http://startbootstrap.com/template-overviews/grayscale/">Grayscale template overview page</a>
+            on Start Bootstrap to give some feedback about this theme!</p>
+          <ul class="list-inline banner-social-buttons">
+            <li class="list-inline-item">
+              <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
+                <i class="fa fa-twitter fa-fw"></i>
+                <span class="network-name">Twitter</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
+                <i class="fa fa-github fa-fw"></i>
+                <span class="network-name">Github</span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg">
+                <i class="fa fa-google-plus fa-fw"></i>
+                <span class="network-name">Google+</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container text-center">
+      <p>Linköping University, 2017</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+
+</body>
+
+</html>
