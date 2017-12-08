@@ -75,24 +75,230 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 mx-auto">
-          <h2>The ROV</h2>
+          <h1>The ROV</h1>
         </div>
       </div>
       <div class="row">
         <div class="col-lg-6 mx-auto">
-          <p>The ROV is a small underwater system that is equipped with 6 thrusters that enable it to control all 6 degrees
-            of freedom under water. It uses an inertial measuerement unit (IMU), a camera and a pressure sensor to estimate
-            it's position, velocity, orientation and angular velocities about all three body-fix axes. The ROV is remotely
-            operated via a PC using a Xbox controller or by setting references in specific states through the GUI. The PC
-            communicates with the ROV's internal computer through a cable.
-            <br> One of the main purposes of this project has been to introduce a positioning system in order to be able to fulfill
-            the ultimate goal of a fully autonomous system in the future. This goal has been achieved with the position control,
-            which enables the operator to specify a position to which the ROV then navigates.
+          <p> In both civilian and military applications, the interest and need for autonomous vessels that can carry out missions
+            by sea, air and land without contact with an operator has increased. Examples on such tasks are surveillance,
+            rescue operation, mapping, repair or tactical missions. This project is a collaboration between Linköpings University
+            and Combine Control Systems AB. The underwater vehicle used in the project is a BlueROV from Blue Robotics, and
+            it is provided by Combine Control Systems AB.
           </p>
-
         </div>
-        <div class="col-lg-6 mx-auto">
-          <img src="img/ROV_placeholder.jpg" class="d-inline-block align-middle img-fluid" alt="">
+        <div class="col-lg-5 mx-auto">
+          <img src="img/ROV_placeholder.jpg" class="d-inline-block align-middle img-fluid duck-images" alt="">
+        </div>
+      </div>
+      <div class="row rov2">
+        <div class="col-lg-12 mx-auto">
+          <div id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="card">
+              <div class="card-header" role="tab" id="headingZero">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+                    Goals
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseZero" class="collapse" role="tabpanel" aria-labelledby="headingZero">
+                <div class="card-block">
+                  <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                      <p>The purpose of this project is to mount ultrasonic sensors on the underwater vehicle, develop the model
+                        accordingly and create autonomous behavior for the craft, including advanced regulation, positioning
+                        in known environment and navigation.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingOne">
+                <h5 class="mb-0">
+                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Overview
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                <div class="card-block">
+                  <div class="row">
+                    <div class="col-lg-4 mx-auto">
+                      <p>The ROV is a underwater vehicle with six thrusters that enable it to navigate in six degrees of freedom
+                        under water. Located on the ROV is an inertial measuerement unit (IMU), a magnetometer and a pressure
+                        sensor to estimate it's position, velocity, orientation and angular velocities. The ROV is remotely
+                        operated via a PC using a Xbox controller or by setting a path through the GUI. The PC communicates
+                        with the ROV's internal computer through a cable. </p>
+                    </div>
+                    <div class="col-lg-8 mx-auto">
+                      <figure>
+                        <img src="img/system_overview.png" alt="System overview" class="d-inline-block align-middle img-fluid duck-images">
+                        <figcaption>
+                          <p>Overview of the system</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingTwo">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Sensors
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                <div class="card-block">
+                  <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                      <p>IMU, magnetometer, pressure sensor and ultrasonic sonars, are used to estimate the ROV's position and
+                        attitude. The ROV is equipped with three sonars, they are mounted to pointing in forward, right and
+                        left direction. Each sonar has a measurement range of 1.3 - 20 meters. </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingThree">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Controller
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                <div class="card-block">
+                  <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                      <p>The ROV's velocity and position controllers are of LQ-design which are based on a linear model of the
+                        system. The linear model is achieved by feedback linearization which cancels the non-linearities
+                        in the system. The ROV can follow a path by reference regulation. The plot below presents the ROV
+                        following references sent from the pathfinder and a block scheme for the controllers.</p>
+
+                    </div>
+                    <div class="col-lg-6 mx-auto">
+                      <figure>
+                        <img src="img/controller.png" alt="controller overview" class="d-inline-block align-middle img-fluid duck-images">
+                        <figcaption>
+                          <p>An overview of the controller design</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingFour">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Sensor fusion
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                <div class="card-block">
+                  <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                      <p>The sensor fusions task is to fuse measurements from sonars, IMU, magnetometer and pressure sensor.
+                        It uses an Extended Kalman filter (EKF) with 15 states; 6 global for position and attitude, 6 local
+                        for linear and angular velocities and 3 for biases in angular velocity. An advanced motion model
+                        is used for better state predictions. The sonars measurements are compared with the expected distances,
+                        given the current position and attitude of the ROV.</p>
+                    </div>
+                    <div class="col-lg-6 mx-auto">
+                      <figure>
+                        <img src="img/sonar_measurement.png" alt="Sonar measurement" class="d-inline-block align-middle img-fluid duck-images">
+                        <figcaption>
+                          <p>An overview of a sonar measurement</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingFive">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Simulation
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div class="card-block">
+                  <div class="row">
+                    <div class="col-lg-4 mx-auto">
+                      <ul class="list-unstyled">
+                        <li>
+                          <p>Matlab/Simulink built simulator to simplify code generation and testing</p>
+                          <li>
+                            <p>Simulates states by using a simplified model of the ROV, calculates and outputs sensor data to
+                              ROS
+                            </p>
+                          </li>
+                          <li>
+                            <p>SIL simulation of sensor fusion and/or controller</p>
+                          </li>
+                          <li>
+                            <p>Controller can be run in Simulink or C++ via ROS </p>
+                          </li>
+                          <li>
+                            <p>3D visualization and plots of all states during a simulated run</p>
+                          </li>
+                        </li>
+                      </ul>
+
+                    </div>
+                    <div class="col-lg-8 mx-auto">
+                      <figure>
+                        <img src="img/3d_vis.png" alt="3d Visualization " class="d-inline-block align-middle img-fluid duck-images">
+                        <figcaption>
+                          <p>Visualization from the simulation</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" role="tab" id="headingSix">
+                <h5 class="mb-0">
+                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                    Pathfinder
+                  </a>
+                </h5>
+              </div>
+              <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingSix">
+                <div class="card-block">
+                  <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                      <p>The path is generated using the A* search algorithm. The start and end positions can easily be selected
+                        from the GUI. The path chooses the shortest path between the points while taking into account the
+                        obstacles on the map. The pathfinder with the ROV following the determined path can be seen below.</p>
+
+                    </div>
+                    <div class="col-lg-6 mx-auto">
+                      <figure>
+                        <img src="img/path.png" alt="path" class="d-inline-block align-middle img-fluid duck-images">
+                        <figcaption>
+                          <p>A* path with obstacles in black</p>
+                        </figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -101,12 +307,23 @@
   <!-- Result Section -->
   <section id="result" class="result-section content-section text-center">
     <div class="container">
-      <div class="col-lg-8 mx-auto">
-        <h2>Result</h2>
-        <div class="videoWrapper">
-          <iframe src="https://www.youtube.com/embed/MtN1YnoL46Q?rel=0" frameborder="0" allowfullscreen></iframe>
+      <div class="row">
+        <div class="col-lg-5 mx-auto">
+          <h5>Achievements</h5>
+          <ul class="list-group">
+            <li class="list-group-item">Integration of ultrasonic sonars</li>
+            <li class="list-group-item">Positioning in a known environment</li>
+            <li class="list-group-item">Position, velocity and reference controllers</li>
+            <li class="list-group-item">Simulation environment for the ROV</li>
+            <li class="list-group-item">Optimal path planning in known environment</li>
+          </ul>
         </div>
-
+        <div class="col-lg-7 mx-auto">
+          <h5>Project Video</h5>
+          <div class="videoWrapper">
+            <iframe src="https://www.youtube.com/embed/MtN1YnoL46Q?rel=0" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </section>

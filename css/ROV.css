@@ -37,9 +37,9 @@ a {
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   color: #004182; }
-  a:focus, a:hover {
+  a:hover {
     text-decoration: none;
-    color: #000e1c; }
+    color: #003469; }
 
 #mainNav {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -155,6 +155,25 @@ a {
   -o-background-size: cover;
   background-size: cover; }
 
+.card-block {
+  color: white;
+  background-color: black; }
+
+.card-header {
+  background-color: black;
+  border-color: black; }
+
+.card {
+  background-color: black;
+  border-color: black; }
+
+.duck-images {
+  border-radius: 2%;
+  background-color: white; }
+
+.rov2 {
+  margin-top: 40px; }
+
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -167,6 +186,20 @@ a {
     left: 0;
     width: 100%;
     height: 100%; }
+
+#collapseFive p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 20px; }
+  @media (min-width: 768px) {
+    #collapseFive p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 0 20px; } }
+
+.list-group-item {
+  background-color: rgba(0, 0, 0, 0.508);
+  font-size: 16px; }
 
 @media (min-width: 992px) {
   .content-section {
