@@ -206,7 +206,9 @@ a {
     padding: 20px;
   }
 }
-
+#documentation, #contact{
+  padding-bottom: 0px;
+}
 .result-section {
   color: white;
   background: url('../img/downloads-bg.jpg') no-repeat center center scroll;
