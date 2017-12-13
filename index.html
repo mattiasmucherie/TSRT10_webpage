@@ -88,7 +88,7 @@
           </p>
         </div>
         <div class="col-lg-5 mx-auto">
-          <img src="img/ROV_placeholder.jpg" class="d-inline-block align-middle img-fluid duck-images" alt="">
+          <img src="img/ROV.JPG" class="d-inline-block align-middle img-fluid duck-images" alt="">
         </div>
       </div>
       <div class="row rov2">
@@ -156,9 +156,9 @@
                 <div class="card-block">
                   <div class="row">
                     <div class="col-lg-8 mx-auto">
-                      <p>IMU, magnetometer, pressure sensor and ultrasonic sonars, are used to estimate the ROV's position and
-                        attitude. The ROV is equipped with three sonars, they are mounted to pointing in forward, right and
-                        left direction. Each sonar has a measurement range of 1.3 - 20 meters. </p>
+                      <p>IMU, magnetometer, pressure sensor and ultrasonic sonars are used to estimate the ROV's position and
+                        attitude. The ROV is equipped with three sonars, they are mounted in forward, right and left direction.
+                        Each sonar has a measurement range of 1.3 - 20 meters.</p>
                     </div>
                   </div>
                 </div>
@@ -176,10 +176,9 @@
                 <div class="card-block">
                   <div class="row">
                     <div class="col-lg-6 mx-auto">
-                      <p>The ROV's velocity and position controllers are of LQ-design which are based on a linear model of the
-                        system. The linear model is achieved by feedback linearization which cancels the non-linearities
-                        in the system. The ROV can follow a path by reference regulation. The plot below presents the ROV
-                        following references sent from the pathfinder and a block scheme for the controllers.</p>
+                      <p>The ROV's velocity and position controllers are of LQ-design which are based on linear models of the
+                        system. Feedback linearization is used to cancel nonlinearities and get linear behavior of the system
+                        for both controllers. The ROV can follow a path by reference regulation.</p>
 
                     </div>
                     <div class="col-lg-6 mx-auto">
@@ -206,11 +205,12 @@
                 <div class="card-block">
                   <div class="row">
                     <div class="col-lg-6 mx-auto">
-                      <p>The sensor fusions task is to fuse measurements from sonars, IMU, magnetometer and pressure sensor.
-                        It uses an Extended Kalman filter (EKF) with 15 states; 6 global for position and attitude, 6 local
-                        for linear and angular velocities and 3 for biases in angular velocity. An advanced motion model
-                        is used for better state predictions. The sonars measurements are compared with the expected distances,
-                        given the current position and attitude of the ROV.</p>
+                      <p>An Extended Kalman filter (EKF) is used to fuse measurements from sonars, IMU, magnetometer and pressure
+                        sensor with a motion model. The EKF has 15 states; 6 global for position and attitude, 6 local for
+                        linear and angular velocities and 3 for biases in angular velocity. The motion model is used to improve
+                        state predictions. The sonars measurements are compared with the expected distances, given the current
+                        position and attitude of the ROV. This is illustrated below together with a result from a comparison
+                        between estimated and ground truth position. </p>
                     </div>
                     <div class="col-lg-6 mx-auto">
                       <figure>
@@ -235,31 +235,31 @@
               <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive">
                 <div class="card-block">
                   <div class="row">
-                    <div class="col-lg-4 mx-auto">
+                    <div class="col-lg-6 mx-auto">
                       <ul class="list-unstyled">
                         <li>
-                          <p>Matlab/Simulink built simulator to simplify code generation and testing</p>
+                          <p>Matlab/Simulink built simulator to simplify code generation and testing</p><hr>
                           <li>
                             <p>Simulates states by using a simplified model of the ROV, calculates and outputs sensor data to
                               ROS
-                            </p>
+                            </p><hr>
                           </li>
                           <li>
-                            <p>SIL simulation of sensor fusion and/or controller</p>
+                            <p>SIL simulation of sensor fusion and/or controller</p><hr>
                           </li>
                           <li>
-                            <p>Controller can be run in Simulink or C++ via ROS </p>
+                            <p>Controller can be run in Simulink or C++ via ROS </p><hr>
                           </li>
                           <li>
-                            <p>3D visualization and plots of all states during a simulated run</p>
+                            <p>3D visualization and plots of all states during a simulated run</p><hr>
                           </li>
                         </li>
                       </ul>
 
                     </div>
-                    <div class="col-lg-8 mx-auto">
+                    <div class="col-lg-6 mx-auto" id ="sim-image">
                       <figure>
-                        <img src="img/3d_vis.png" alt="3d Visualization " class="d-inline-block align-middle img-fluid duck-images">
+                        <img src="img/3d_vis.png" alt="3d Visualization " class="d-inline-block align-middle img-fluid duck-images" >
                         <figcaption>
                           <p>Visualization from the simulation</p>
                         </figcaption>
@@ -281,9 +281,9 @@
                 <div class="card-block">
                   <div class="row">
                     <div class="col-lg-6 mx-auto">
-                      <p>The path is generated using the A* search algorithm. The start and end positions can easily be selected
+                      <p>Paths are generated using the A* search algorithm. The start and end positions can easily be selected
                         from the GUI. The path chooses the shortest path between the points while taking into account the
-                        obstacles on the map. The pathfinder with the ROV following the determined path can be seen below.</p>
+                        obstacles on the map. </p>
 
                     </div>
                     <div class="col-lg-6 mx-auto">
@@ -397,7 +397,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-fluid" src="img/ROV_logo.png" alt="">
+          <img class="img-fluid" src="img/amanda.jpg" alt="">
           <a target="_blank" href="https://www.linkedin.com/in/amanda-andersson-751874a5/" class="btn btn-default btn-lg">
             <i class="fa fa-linkedin-square"></i>
             <span class="network-name">LinkedIn</span>
@@ -425,7 +425,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-fluid" src="img/ROV_logo.png" alt="">
+          <img class="img-fluid" src="img/marcus.jpg" alt="">
           <a target="_blank" href="https://www.linkedin.com/in/marcus-homelius-2b2985131/" class="btn btn-default btn-lg">
             <i class="fa fa-linkedin-square"></i>
             <span class="network-name">LinkedIn</span>
@@ -481,7 +481,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-fluid" src="img/ROV_logo.png" alt="">
+          <img class="img-fluid" src="img/martin.jpg" alt="">
           <a target="_blank" href="https://www.linkedin.com/in/martin-johannesson-566723140" class="btn btn-default btn-lg">
             <i class="fa fa-linkedin-square"></i>
             <span class="network-name">LinkedIn</span>
@@ -509,7 +509,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-fluid" src="img/ROV_logo.png" alt="">
+          <img class="img-fluid" src="img/mattias.jpg" alt="">
           <a target="_blank" href="https://www.linkedin.com/in/mattias-mucherie-113149154/" class="btn btn-default btn-lg">
             <i class="fa fa-linkedin-square"></i>
             <span class="network-name">LinkedIn</span>
@@ -537,7 +537,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-fluid" src="img/ROV_logo.png" alt="">
+          <img class="img-fluid" src="img/fredrik.jpg" alt="">
           <a target="_blank" href="https://www.linkedin.com/in/fredrik-nilsson-912445a5/" class="btn btn-default btn-lg">
             <i class="fa fa-linkedin-square"></i>
             <span class="network-name">LinkedIn</span>
@@ -565,7 +565,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-fluid" src="img/ROV_logo.png" alt="">
+          <img class="img-fluid" src="img/anton.jpg" alt="">
           <a target="_blank" href="https://www.linkedin.com/in/anton-nordl%C3%B6f-60a4b9139/" class="btn btn-default btn-lg">
             <i class="fa fa-linkedin-square"></i>
             <span class="network-name">LinkedIn</span>
@@ -593,7 +593,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <img class="img-fluid" src="img/ROV_logo.png" alt="">
+          <img class="img-fluid" src="img/alaa.jpg" alt="">
           <a target="_blank" href="https://www.linkedin.com/in/alaa-saeed-39b811136/" class="btn btn-default btn-lg">
             <i class="fa fa-linkedin-square"></i>
             <span class="network-name">LinkedIn</span>
